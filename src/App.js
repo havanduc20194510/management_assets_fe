@@ -1,10 +1,14 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
+import DashBoard from './pages/admin/dashBoard';
 
 function App() {
   return (
-    <div className="App">
-      
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/dashboard" element={<DashBoard />}></Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
