@@ -10,14 +10,20 @@ import { Link } from "react-router-dom";
 import { FaRegEdit } from "react-icons/fa";
 import { RiDeleteBin6Line } from "react-icons/ri";
 
-const Hardware = () => {
+const Software = () => {
+
+    const [current, setCurrent] = useState(3);
+    const onChange = (page) => {
+        setCurrent(page);
+    };
+
     return (
         <div className="flex">
             <Sidebar />
             <div className="bg-[#F5F6FA] w-4/5">
                 <Header />
                 <div className="flex mt-7 mx-8 w-full">
-                    <h1 className="w-3/4 text-2xl mt-3">Hardware List</h1>
+                    <h1 className="w-3/4 text-2xl mt-3">Software List</h1>
                     <div className="w-1/5">
                         <Form className='w-full'>
                             <Form.Item>
@@ -39,19 +45,19 @@ const Hardware = () => {
                     <div className="flex pt-2.5 mx-12 justify-between text-sm font-bold">
                         <p>Image</p>
                         <p className="w-[20%] -ml-5">Product Name</p>
-                        <p>Manufacture</p>
-                        <p>Price</p>
-                        <p>Quantity</p>
+                        <p>License</p>
+                        <p>PricePerSeat</p>
+                        <p>Seats</p>
                         <p>Code</p>
-                        <p>Location</p>
+                        <p>Vendor</p>
                         <p>Action</p>
                     </div>
                 </div>
                 <div className="mx-7 h-[100px] border-b-2 border-b-[#D5D5D5] text-sm">
                     <div className="flex justify-between mx-10 pt-3.5">
                         <img src={avatar} className="w-[60px] h-[60px] rounded-lg" />
-                        <Link to="" className="w-[20%] -ml-10 mt-4">DELL XPS 13 9320 Plus</Link>
-                        <p className="mt-4">DELL</p>
+                        <Link to="" className="w-[19%] -ml-10 mt-4">DELL XPS 13 9320 Plus</Link>
+                        <p className="mt-4">XS5300</p>
                         <p className="mt-4">$690.00</p>
                         <p className="mt-4">63</p>
                         <p className="mt-4">HW001</p>
@@ -63,11 +69,11 @@ const Hardware = () => {
                     </div>
                 </div>
                 <div className="">
-                    {/* <Pagination current={current} onChange={onChange} total={50} className="mt-5 ml-96" /> */}
+                    <Pagination current={current} onChange={onChange} total={50} className="mt-5 ml-96" />
                 </div>
             </div>
         </div>
     )
 }
 
-export default Hardware;
+export default Software;

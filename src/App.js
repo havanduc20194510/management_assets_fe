@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import DashBoard from './pages/admin/dashBoard';
 import Hardware from './pages/admin/hardware';
+import Software from './pages/admin/software';
 
 function App() {
   return (
@@ -9,7 +10,7 @@ function App() {
       <Routes>
         <Route path="/dashboard" element={<DashBoard />}/>
         <Route path="/hardware" element={<Hardware />}/>
-        {/* <Route path="/software" element={<DashBoard />}/>
+        <Route path="/software" element={<Software />}/>
         <Route path="/request" element={<DashBoard />}/>
         <Route path="/maintain" element={<DashBoard />}/>
         <Route path="/employees" element={<DashBoard />}/>
@@ -18,7 +19,7 @@ function App() {
         <Route path="/contact" element={<DashBoard />}/>
         <Route path="/statistical" element={<DashBoard />}/>
         <Route path="/setting" element={<DashBoard />}/>
-        <Route path="/logout" element={<DashBoard />}/> */}
+        <Route path="/logout" element={<DashBoard />}/>
       </Routes>
     </BrowserRouter>
   );
