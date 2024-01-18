@@ -98,11 +98,12 @@ const items = [
 //   label: `${icon.decription}`,
 // }));
 
-const pathSidebar = items.map((icon, index) => ({
-  key: String(index + 1),
-  icon: React.createElement(icon.icon),
-  label: `${icon.decription}`,
-}));
+// const pathSidebar = items.map((icon, index) => ({
+//   key: String(index + 1),
+//   icon: React.createElement(icon.icon),
+//   path: React.createElement({Link}, {to: icon.path}),
+//   label: `${icon.decription}`,
+// }));
 
 const Sidebar = () => {
 
@@ -122,10 +123,18 @@ const Sidebar = () => {
         <div className="demo-logo-vertical h-[70px]">
           <img src={logo} alt="logo" className="h-full" />
         </div>
-        <Menu theme="light" mode="inline" defaultSelectedKeys={['4']} items={pathSidebar} className='pl-10'
-        
-        />
-        {/* <Link to={items.map((item) => (item.path))} ></Link> */}
+
+        {/* <Menu theme="light" mode="inline" defaultSelectedKeys={['4']} items={pathSidebar} className='pl-10'/> */}
+
+        {items.map((item, index) => (
+          <Menu theme="light" mode="inline" key={item.key} defaultSelectedKeys={['1']} className='px-10'>
+            <Menu.Item icon={React.createElement(item.icon)} className='mx-2'>
+              <Link to={item.path} key={index}>
+                {item.decription}
+              </Link>
+            </Menu.Item>
+          </Menu>
+        ))}
       </Sider>
 
       {/* {Array.from({ length: 100, },
